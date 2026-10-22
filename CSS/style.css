@@ -1,0 +1,154 @@
+@import url('global.css');
+
+/* ==========================================================================
+   SUMÁRIO DO ARQUIVO:
+   1. HEADER (Cabeçalho e Navegação Fixa)
+   2. MAIN (Seções do Corpo - Home / Hero)
+   3. FOOTER (Rodapé do Site)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. HEADER (Cabeçalho e Navegação)
+   ========================================================================== */
+
+/* Fixa o cabeçalho no topo, alinha a logo e o menu lado a lado de forma transparente */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background-color: transparent;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+/* Controla o tamanho máximo e proporção da logo */
+header img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Organiza os links de navegação em linha com espaçamento uniforme */
+header ul {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* Estiliza os textos dos links do menu */
+header ul li a {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #ffffff; /* Branco para destacar sobre a imagem de fundo da Home */
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* Cria o efeito de sublinhado animado ao passar o mouse */
+header ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.25s ease-in-out;
+}
+
+header ul li a:hover {
+  color: var(--primary);
+}
+
+header ul li a:hover::after {
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   2. MAIN (Estrutura Principal e Seção Home / Hero)
+   ========================================================================== */
+
+main {
+  width: 100%;
+}
+
+/* Configura a seção Home para ocupar a tela inteira com alinhamento central */
+#home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8%;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+/* Transforma a tag <img> do HTML em uma imagem de fundo responsiva perfeita */
+#home img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Aplica uma película escura semi-transparente sobre a foto para destacar o texto */
+#home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+/* Garante que os títulos e textos da Home fiquem acima da imagem e da película */
+#home h1,
+#home p {
+  position: relative;
+  z-index: 3;
+  color: #ffffff;
+  max-width: 650px;
+}
+
+#home h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#home p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #f8fafc;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==========================================================================
+   3. FOOTER (Rodapé)
+   ========================================================================== */
+
+/* Estrutura base para o rodapé (você pode customizar conforme avançar no projeto) */
+footer {
+  width: 100%;
+  padding: 3rem 5%;
+  background-color: var(--text-main);
+  color: #ffffff;
+  text-align: center;
+}

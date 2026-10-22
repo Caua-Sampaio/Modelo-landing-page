@@ -1,0 +1,105 @@
+/* ==========================================================================
+   1. VARIÁVEIS (Design Tokens)
+   ========================================================================== */
+:root {
+  /* Cores de Tema */
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --secondary: #0ea5e9;
+  
+  /* Cores de Fundo e Superfície */
+  --bg-body: #f8fafc;
+  --bg-surface: #ffffff;
+  
+  /* Tipografia e Textos */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+
+/* ==========================================================================
+   2. RESET CSS MODERNO
+   ========================================================================== */
+
+/* Remove margens e preenchimentos e usa border-box para o tamanho total */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Suaviza a rolagem, fixa o tamanho base e evita zoom automático no mobile */
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Garante altura mínima da tela, aplica fonte, cores e suaviza a renderização de texto */
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Torna imagens e mídias totalmente responsivas */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Força campos de formulário e botões a herdarem as fontes e cores */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove marcadores padrão de listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove sublinhado de links e herda a cor do texto */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Limpa espaçamentos de tabelas e força largura total */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   3. TIPOGRAFIA BASE
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+small {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
