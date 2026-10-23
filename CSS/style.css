@@ -4,15 +4,18 @@
    SUMÁRIO DO ARQUIVO:
    1. HEADER (Cabeçalho e Navegação Fixa)
    2. MAIN (Seções do Corpo - Home / Hero)
-   3. FOOTER (Rodapé do Site)
+   3. ABOUT (Seção Sobre Nós)
+   4. SERVICES (Seção de Tratamentos)
+   5. CASES (Carrossel de Depoimentos)
+   6. CONTACT (Seção de Contato e Formulário)
+   7. FOOTER (Rodapé do Site)
+   8. RESPONSIVIDADE & MENU HAMBÚRGUER (Mobile)
    ========================================================================== */
 
 
 /* ==========================================================================
-   1. HEADER (Cabeçalho e Navegação)
+   1. HEADER / NAVEGAÇÃO DA CLÍNICA
    ========================================================================== */
-
-/* Fixa o cabeçalho no topo, alinha a logo e o menu lado a lado de forma transparente */
 header {
   position: fixed;
   top: 0;
@@ -22,36 +25,32 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 5%;
-  background-color: transparent;
+  background-color: transparent; /* Começa transparente sobre a foto escura */
   z-index: 1000;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Controla o tamanho máximo e proporção da logo */
 header img {
   height: 45px;
   width: auto;
   object-fit: contain;
 }
 
-/* Organiza os links de navegação em linha com espaçamento uniforme */
 header ul {
   display: flex;
   gap: 2.5rem;
   align-items: center;
 }
 
-/* Estiliza os textos dos links do menu */
 header ul li a {
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.95rem;
-  color: #ffffff; /* Branco para destacar sobre a imagem de fundo da Home */
+  color: #ffffff; 
   position: relative;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
 }
 
-/* Cria o efeito de sublinhado animado ao passar o mouse */
 header ul li a::after {
   content: '';
   position: absolute;
@@ -59,28 +58,37 @@ header ul li a::after {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   transition: width 0.25s ease-in-out;
 }
 
 header ul li a:hover {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 header ul li a:hover::after {
   width: 100%;
 }
 
+/* Estado do Header após rolar a página (Ativado via JS) */
+header.scrolled {
+  background-color: var(--primary); /* Fundo sólido Verde Sálvia */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  padding: 1rem 5%;
+}
+
+header.scrolled ul li a {
+  color: var(--bg-surface);
+}
+
 
 /* ==========================================================================
    2. MAIN (Estrutura Principal e Seção Home / Hero)
    ========================================================================== */
-
 main {
   width: 100%;
 }
 
-/* Configura a seção Home para ocupar a tela inteira com alinhamento central */
 #home {
   position: relative;
   width: 100%;
@@ -93,7 +101,6 @@ main {
   padding-top: 80px;
 }
 
-/* Transforma a tag <img> do HTML em uma imagem de fundo responsiva perfeita */
 #home img {
   position: absolute;
   top: 0;
@@ -104,7 +111,6 @@ main {
   z-index: 1;
 }
 
-/* Aplica uma película escura semi-transparente sobre a foto para destacar o texto */
 #home::before {
   content: '';
   position: absolute;
@@ -116,7 +122,6 @@ main {
   z-index: 2;
 }
 
-/* Garante que os títulos e textos da Home fiquem acima da imagem e da película */
 #home h1,
 #home p {
   position: relative;
@@ -128,7 +133,7 @@ main {
 #home h1 {
   font-size: 3rem;
   line-height: 1.2;
-  margin-bottom: var(--space-md);
+  margin-bottom: 1rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -139,16 +144,17 @@ main {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+
 /* ==========================================================================
-   SEÇÃO ABOUT (SOBRE NÓS)
+   3. SEÇÃO ABOUT (SOBRE NÓS)
    ========================================================================== */
 #about {
   width: 100%;
   padding: 6rem 5%;
-  background-color: var(--bg-body); /* Cor principal de fundo */
+  background: linear-gradient(135deg, var(--bg-body) 0%, #ECE7DE 100%);
+  border-top: 1px solid rgba(197, 168, 128, 0.2);
 }
 
-/* Organiza a imagem e o texto lado a lado */
 #about .content-about {
   display: flex;
   align-items: center;
@@ -158,17 +164,15 @@ main {
   margin: 0 auto;
 }
 
-/* Estilização da imagem (fica à esquerda) */
 #about .content-about img {
   width: 50%;
   max-width: 500px;
-  height: 700px;
+  height: 600px;
   object-fit: cover;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Estilização da caixa de texto (fica à direita) */
 #about .text-about {
   flex: 1;
 }
@@ -176,7 +180,7 @@ main {
 #about .text-about h2 {
   font-size: 2.25rem;
   color: var(--text-main);
-  margin-bottom: var(--space-md);
+  margin-bottom: 1.5rem;
 }
 
 #about .text-about p {
@@ -185,10 +189,14 @@ main {
   line-height: 1.7;
 }
 
+
+/* ==========================================================================
+   4. SEÇÃO SERVICES (TRATAMENTOS)
+   ========================================================================== */
 #services {
   width: 100%;
   padding: 7rem 5%;
-  background-color: var(--bg-surface);
+  background-color: var(--bg-body);
 }
 
 #services .services-header {
@@ -197,20 +205,19 @@ main {
   margin: 0 auto 4.5rem auto;
 }
 
-/* Pequena etiqueta superior estilo boutique */
 #services .section-tag {
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--primary);
+  color: var(--secondary);
   margin-bottom: 0.75rem;
 }
 
 #services .services-header h2 {
   font-size: 2.5rem;
-  color: var(--text-main);
+  color: var(--primary);
   margin-bottom: 0.75rem;
 }
 
@@ -228,20 +235,21 @@ main {
 }
 
 #services .service-card {
-  background-color: var(--bg-body);
-  border: 1px solid #e2e8f0;
+  background-color: var(--bg-surface);
+  border: 1px solid rgba(197, 168, 128, 0.2);
+  border-top: 4px solid var(--primary);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
 }
 
 #services .service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+  border-top-color: var(--secondary);
 }
 
-/* Container da imagem com o Badge flutuante */
 #services .service-image-wrapper {
   position: relative;
   width: 100%;
@@ -258,13 +266,13 @@ main {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: #ffffff;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.35rem 0.85rem;
   border-radius: 50px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 #services .service-content {
@@ -296,18 +304,19 @@ main {
 
 #services .service-link:hover {
   gap: 0.7rem;
-  color: var(--primary-hover);
+  color: var(--secondary);
 }
 
 
 /* ==========================================================================
-   SEÇÃO CASES (CARROSSEL DE DEPOIMENTOS)
+   5. SEÇÃO CASES (CARROSSEL DE DEPOIMENTOS)
    ========================================================================== */
 #cases {
   width: 100%;
   padding: 7rem 5%;
-  background-color: var(--bg-body);
+  background: linear-gradient(135deg, #ECE7DE 0%, var(--bg-body) 100%);
   overflow: hidden;
+  border-top: 1px solid rgba(197, 168, 128, 0.2);
 }
 
 #cases .cases-header {
@@ -322,7 +331,7 @@ main {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--primary);
+  color: var(--secondary);
   margin-bottom: 0.75rem;
 }
 
@@ -337,7 +346,6 @@ main {
   color: var(--text-muted);
 }
 
-/* Wrapper que segura o carrossel e as setas nas laterais */
 #cases .cases-carousel-container {
   position: relative;
   max-width: 1250px;
@@ -346,7 +354,6 @@ main {
   align-items: center;
 }
 
-/* Trilha horizontal rolável com suporte a touch e scroll snap */
 #cases .cases-track {
   display: flex;
   gap: 2rem;
@@ -354,19 +361,18 @@ main {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding: 1rem 0.5rem;
-  scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
+  scrollbar-width: none;
 }
 
 #cases .cases-track::-webkit-scrollbar {
-  display: none; /* Esconde a barra de rolagem no Chrome/Safari */
+  display: none;
 }
 
-/* Cartão individual de depoimento */
 #cases .case-card {
-  flex: 0 0 350px; /* Largura fixa de cada card no carrossel */
+  flex: 0 0 350px;
   scroll-snap-align: start;
   background-color: var(--bg-surface);
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(197, 168, 128, 0.2);
   border-radius: 16px;
   padding: 3rem 2.5rem 2.5rem 2.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
@@ -387,8 +393,8 @@ main {
   top: 1.2rem;
   left: 2rem;
   font-size: 4rem;
-  color: var(--primary);
-  opacity: 0.15;
+  color: var(--secondary);
+  opacity: 0.25;
   font-family: serif;
   line-height: 1;
 }
@@ -417,11 +423,10 @@ main {
 
 #cases .case-author span {
   font-size: 0.85rem;
-  color: var(--primary);
-  font-weight: 500;
+  color: var(--secondary);
+  font-weight: 600;
 }
 
-/* Botões de navegação (Setas do carrossel) */
 #cases .carousel-btn {
   position: absolute;
   top: 50%;
@@ -429,7 +434,7 @@ main {
   z-index: 10;
   background-color: var(--bg-surface);
   color: var(--text-main);
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(197, 168, 128, 0.3);
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -459,15 +464,15 @@ main {
 
 
 /* ==========================================================================
-   SEÇÃO CONTACT (CONTATO)
+   6. SEÇÃO CONTACT (CONTATO)
    ========================================================================== */
 #contact {
   width: 100%;
   padding: 6rem 5%;
   background-color: var(--bg-surface);
+  border-top: 1px solid rgba(197, 168, 128, 0.2);
 }
 
-/* Cabeçalho centralizado da seção */
 #contact .contact-header {
   text-align: center;
   max-width: 700px;
@@ -486,7 +491,6 @@ main {
   line-height: 1.6;
 }
 
-/* Grid que divide o bloco de informações e o formulário lado a lado */
 #contact .contact-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -496,12 +500,11 @@ main {
   align-items: start;
 }
 
-/* Caixa de informações da clínica */
 #contact .contact-info {
   background-color: var(--bg-body);
   padding: 3rem;
   border-radius: 12px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(197, 168, 128, 0.2);
 }
 
 #contact .contact-info h3 {
@@ -517,7 +520,6 @@ main {
   line-height: 1.6;
 }
 
-/* Lista de dados de contato */
 #contact .info-list {
   display: flex;
   flex-direction: column;
@@ -543,18 +545,16 @@ main {
   line-height: 1.5;
 }
 
-/* Caixa do formulário de contato */
 #contact .contact-form {
   background-color: var(--bg-body);
   padding: 3rem;
   border-radius: 12px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(197, 168, 128, 0.2);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* Grupos de campos do formulário */
 #contact .form-group {
   display: flex;
   flex-direction: column;
@@ -579,19 +579,17 @@ main {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efeito de destaque (focus) elegante nos campos ao digitar */
 #contact .form-group input:focus,
 #contact .form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 0 3px rgba(78, 93, 76, 0.15);
 }
 
 #contact .form-group textarea {
   resize: vertical;
 }
 
-/* Botão de envio do formulário */
 #contact .btn-submit {
   padding: 1rem;
   background-color: var(--primary);
@@ -601,7 +599,7 @@ main {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 4px 12px rgba(78, 93, 76, 0.25);
 }
 
 #contact .btn-submit:hover {
@@ -611,16 +609,16 @@ main {
 
 
 /* ==========================================================================
-   FOOTER (RODAPÉ)
+   7. FOOTER (RODAPÉ)
    ========================================================================== */
 #footer {
   width: 100%;
-  background-color: var(--text-main); /* Cor escura e sóbria para o rodapé */
+  background-color: var(--text-main);
   color: #ffffff;
   padding: 5rem 5% 2rem 5%;
+  transition: padding 0.3s ease;
 }
 
-/* Grid principal dividindo o rodapé em colunas responsivas */
 #footer .footer-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -629,7 +627,6 @@ main {
   margin: 0 auto 3rem auto;
 }
 
-/* Estilo individual de cada coluna */
 #footer .footer-col {
   display: flex;
   flex-direction: column;
@@ -644,12 +641,11 @@ main {
 }
 
 #footer .footer-col p {
-  color: #94a3b8; /* Tom acinzentado elegante para textos secundários no escuro */
+  color: #94a3b8;
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
-/* Lista de links rápidos do rodapé */
 #footer .footer-col ul {
   list-style: none;
   padding: 0;
@@ -665,10 +661,9 @@ main {
 }
 
 #footer .footer-col ul li a:hover {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
-/* Links das redes sociais */
 #footer .social-links {
   display: flex;
   gap: 1.25rem;
@@ -682,19 +677,129 @@ main {
 }
 
 #footer .social-links a:hover {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
-/* Rodapé inferior (Copyright) */
 #footer .footer-bottom {
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória sutil */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
 }
 
 #footer .footer-bottom p {
   color: #94a3b8;
   font-size: 0.85rem;
+}
+
+
+/* ==========================================================================
+   8. RESPONSIVIDADE & MENU HAMBÚRGUER (MOBILE)
+   ========================================================================== */
+
+/* Botão do Hambúrguer (Oculto no Desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff; /* Branco sobre a foto da home */
+  transition: all 0.3s ease;
+}
+
+/* Quando o header fica sólido, as linhas do hambúrguer mudam de cor */
+header.scrolled .hamburger span {
+  background-color: var(--bg-surface);
+}
+
+/* Regras aplicadas para telas abaixo de 768px (Tablets e Celulares) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Menu lateral retrátil */
+  header ul {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Escondido fora da tela */
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--bg-surface);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    transition: right 0.4s ease-in-out;
+    z-index: 1000;
+  }
+
+  /* Ativado via JavaScript */
+  header ul.active {
+    right: 0;
+  }
+
+  header ul li a {
+    color: var(--text-main) !important;
+    font-size: 1.15rem;
+  }
+
+  /* Animação do botão Hambúrguer virando "X" */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+    background-color: var(--text-main) !important;
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+    background-color: var(--text-main) !important;
+  }
+
+  /* Ajustes de tamanho de títulos na Home */
+  #home h1 {
+    font-size: 2.25rem;
+  }
+
+  #home p {
+    font-size: 1rem;
+  }
+
+  /* Seção Sobre: empilha imagem e texto */
+  #about .content-about {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  #about .content-about img {
+    width: 100%;
+    height: 380px;
+  }
+
+  /* Seção Cases: ajusta largura dos cards no carrossel mobile */
+  #cases .case-card {
+    flex: 0 0 280px;
+    padding: 2.2rem 1.8rem;
+  }
+
+  /* Seção Contato: empilha colunas de informações e formulário */
+  #contact .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }

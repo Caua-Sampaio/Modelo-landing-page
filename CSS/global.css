@@ -1,23 +1,24 @@
 /* ==========================================================================
-   1. VARIÁVEIS (Design Tokens)
+   1. VARIÁVEIS (Design Tokens - Paleta Spa & Luxury Serenity)
    ========================================================================== */
 :root {
-  /* Cores de Tema */
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --secondary: #0ea5e9;
+  /* Cores de Tema (Luxo, Paz e Bem-estar) */
+  --primary: #4E5D4C;        /* Verde Sálvia / Eucalipto Profundo (Transmite paz, saúde e sofisticação) */
+  --primary-hover: #3D4A3B;  /* Tom levemente mais escuro para botões e interações */
+  --secondary: #C5A880;      /* Champagne / Dourado Suave (Requinte nos detalhes e ícones) */
   
   /* Cores de Fundo e Superfície */
-  --bg-body: #f8fafc;
-  --bg-surface: #ffffff;
+  --bg-body: #F4F1EA;        /* Marfim / Areia Quente (Fundo acolhedor, elegante e relaxante) */
+  --bg-surface: #FFFFFF;     /* Branco puro para superfícies e cartões (Garante contraste e limpeza) */
   
-  /* Tipografia e Textos */
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
+  /* Tipografia e Textos (Conforto visual e leitura agradável) */
+  --text-main: #332F2E;      /* Taupe Escuro / Marrom Suave (Substitui o preto pesado com aconchego) */
+  --text-muted: #6B635F;     /* Cinza-taupe médio para parágrafos */
+  --text-light: #9E9490;     /* Cinza claro para rodapés e detalhes menores */
+  
+  /* Tipografia Base */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
-
 
 /* ==========================================================================
    2. RESET CSS MODERNO
