@@ -78,6 +78,14 @@ table {
   width: 100%;
 }
 
+/* Padrão base opcional para seções que precisam ocupar a tela inteira */
+.full-screen-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 /* ==========================================================================
    3. TIPOGRAFIA BASE
