@@ -1,3 +1,11 @@
+
+/**
+ * Arquivo de Lógica Principal
+ * Autor: Cauã Sampaio
+ */
+
+
+
 /* ==========================================================================
    1. HEADER SÓLIDO AO ROLAR A PÁGINA
    ========================================================================== */
@@ -60,3 +68,15 @@ if (track && nextBtn && prevBtn) {
     }
   });
 }
+
+
+
+
+// Mensagem estilizada no Console do Desenvolvedor
+const estiloTitulo = 'background: #b8860b; color: #fff; padding: 6px 12px; font-weight: bold; font-size: 14px; border-radius: 4px;';
+const estiloTexto = 'color: #333; font-size: 12px; padding: 4px 0;';
+
+console.log('%c✨ Olá, visitante curioso!', estiloTitulo);
+console.log('%cEste site foi desenvolvido com foco em alta performance, SEO e design moderno.', estiloTexto);
+console.log('%cGostou do trabalho? Entre em contacto para desenvolvermos o seu próximo projeto digital!', estiloTexto);
+console.log('%c📧 Contacto: caua.duarte.sampaio@gmail.com', 'color: #b8860b; font-weight: bold;');
