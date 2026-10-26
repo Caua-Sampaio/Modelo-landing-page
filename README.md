@@ -13,9 +13,11 @@ Uma landing page moderna, responsiva e de alta performance, desenvolvida com foc
 - [🚀 Landing Page Profissional](#-landing-page-profissional)
   - [📋 Índice](#-índice)
   - [🔍 Visão Geral](#-visão-geral)
-  - [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas)
+  - [�️ Demonstração](#️-demonstração)
+  - [🛠️ Stack Tecnológica \& Arquitetura](#️-stack-tecnológica--arquitetura)
   - [📁 Estrutura de Pastas](#-estrutura-de-pastas)
   - [⚙️ Como Executar o Projeto](#️-como-executar-o-projeto)
+    - [Requisitos Mínimos:](#requisitos-mínimos)
   - [📱 Responsividade](#-responsividade)
   - [🚀 Melhorias Futuras](#-melhorias-futuras)
   - [✒️ Autor](#️-autor)
@@ -28,12 +30,29 @@ Esta landing page foi construída para destacar produtos, serviços ou marcas de
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🖥️ Demonstração
 
-O projeto foi desenvolvido utilizando tecnologias essenciais de desenvolvimento web frontend, sem dependências de frameworks pesados, garantindo velocidade de carregamento:
+> *Para uma experiência visual completa e validação de interface, utilize os recursos abaixo:*
 
-- **HTML5:** Estruturação semântica, acessível e otimizada para SEO.
-- **CSS3:** Estilização avançada, uso de variáveis customizadas, Flexbox/Grid e arquitetura modular de arquivos.
+- **🌐 Deploy Online (Live Demo):** [Acesse a Landing Page clicando aqui](#) *(Substitua pelo link de hospedagem, ex: Vercel, Netlify ou GitHub Pages)*
+- **🎥 Prévia em Vídeo / GIF:** 
+  ```markdown
+  *(Opcional)* ![Demonstração em GIF](./image/demo.gif)
+  ```
+- **📱 Prévia Responsiva (Screenshots):**
+  * **Desktop:** `![Desktop View](./image/preview-desktop.png)`
+  * **Mobile:** `![Mobile View](./image/preview-mobile.png)`
+
+---
+
+## 🛠️ Stack Tecnológica & Arquitetura
+
+O projeto foi construído sob premissas rigorosas de engenharia frontend e boas práticas de desenvolvimento web moderno:
+
+- **Core & Marcação Semântica (`HTML5`):** Arquitetura estruturada visando a acessibilidade universal (conformidade com diretrizes *ARIA*) e máxima indexação em motores de busca (*SEO-friendly*).
+- **Design System & Estilização Modular (`CSS3`):** Utilização de variáveis nativas (*CSS Custom Properties*) para garantir consistência de design tokens (paleta cromática, tipografia fluida e escala de espaçamento), eliminando redundâncias e facilitando a escalabilidade do código.
+- **Paradigmas de Layout Responsivo:** Implementação da metodologia *Mobile-First*, tirando proveito de modelos bidimensionais com *CSS Grid* e fluxos flexíveis via *Flexbox* para assegurar estabilidade visual em qualquer *viewport* (de smartphones a monitores ultrawide).
+
 
 ---
 
@@ -58,6 +77,10 @@ A organização do código foi planejada para facilitar a manutenção e a escal
 ---
 
 ## ⚙️ Como Executar o Projeto
+### Requisitos Mínimos:
+Um navegador web moderno (Google Chrome, Firefox, Microsoft Edge ou Safari).
+Um editor de código de sua preferência (recomendado: VS Code).
+Extensão Live Server para o VS Code (opcional, mas recomendada para testes locais em tempo real).
 
 Para visualizar e testar o projeto em sua máquina local, siga os passos abaixo:
 
